@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="@string/events"
-        android:id="@+id/events"
-        android:icon="@drawable/ic_baseline_events_24" />
-
-    <item android:title="@string/card"
-        android:id="@+id/card"
-        android:icon="@drawable/ic_baseline_card_24" />
-
-    <item android:title="@string/timetable"
+    <item android:title=""
         android:id="@+id/timetable"
         android:icon="@drawable/ic_baseline_statements_24" />
 
-    <item android:title="@string/launcher"
+    <item android:title=""
+        android:id="@+id/events"
+        android:icon="@drawable/ic_baseline_events_24" />
+
+    <item android:title=""
+        android:id="@+id/card"
+        android:icon="@drawable/ic_baseline_card_24" />
+
+    <item android:title=""
         android:id="@+id/launcher"
         android:icon="@drawable/ic_baseline_launcher_24" />
 
-    <item android:title="@string/bbva"
+    <item android:title=""
         android:id="@+id/bbva"
         android:icon="@drawable/ic_baseline_bbva_24" />
 

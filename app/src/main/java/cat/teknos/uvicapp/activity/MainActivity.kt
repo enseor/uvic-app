@@ -21,26 +21,27 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_Uvicapp)
         setContentView(R.layout.activity_main)
 
-        replaceFragment(EventsFragment())
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
+
+        replaceFragment(CardFragment())
+        bottomNavigationView.selectedItemId = R.id.card
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            if (item.itemId == bottomNavigationView.selectedItemId) return@setOnItemSelectedListener false
+            when(item.itemId) {
+                R.id.timetable -> replaceFragment(TimetableFragment())
                 R.id.events -> replaceFragment(EventsFragment())
                 R.id.card -> replaceFragment(CardFragment())
-                R.id.timetable -> replaceFragment(TimetableFragment())
                 R.id.launcher -> replaceFragment(LauncherFragment())
                 R.id.bbva -> replaceFragment(BbvaFragment())
             }
             true
         }
     }
-
     private fun replaceFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply{
             replace(R.id.fl_wrapper, fragment)
             commit()
         }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_overflow, menu)

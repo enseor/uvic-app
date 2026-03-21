@@ -146,17 +146,30 @@
 
     <TextView
         android:id="@+id/tvTimer"
-        android:layout_width="200dp"
+        android:layout_width="50dp"
         android:layout_height="18dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/timer"
+        android:text="@string/ESI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0" />
+
+    <TextView
+        android:id="@+id/tvTimer2"
+        android:layout_width="300dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/urn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvTimer"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.001" />
 
     <TextView
         android:layout_width="350dp"
@@ -171,83 +184,48 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTimer"
         app:layout_constraintVertical_bias="0" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:src="@drawable/icon_sports"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
-        app:layout_constraintVertical_bias="0.1"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/icon_sports_green"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:src="@drawable/icon_sports_green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
-        app:layout_constraintVertical_bias="0.1"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/icon_global"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
-        app:layout_constraintVertical_bias="0.1"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:src="@drawable/code_bar"
-        android:layout_marginStart="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/code_qr"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="ContentDescription" />
-
-    <TextView
+    <LinearLayout
+        android:id="@+id/bottomContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/code_bar_num"
-        android:layout_marginStart="32dp"
-        app:layout_constraintHorizontal_bias="0"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintVertical_bias="0.5">
+
+        <ImageView
+            android:id="@+id/ivQrCode"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/code_qr"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:src="@drawable/code_bar"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/code_bar_num"
+                android:textSize="14sp"
+                android:layout_gravity="start" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
