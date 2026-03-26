@@ -1,10 +1,7 @@
 package cat.teknos.uvicapp.activity
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import cat.teknos.uvicapp.R
 import cat.teknos.uvicapp.fragment.CardFragment

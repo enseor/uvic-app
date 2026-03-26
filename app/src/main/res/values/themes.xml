@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.Uvicapp" parent="Theme.MaterialComponents.Light">
+    <style name="Theme.Uvicapp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/vermell_uvic_500</item>
         <item name="colorPrimaryVariant">@color/vermell_uvic_700</item>
         <item name="android:textColorPrimary">@color/white</item>
