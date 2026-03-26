@@ -23,7 +23,4 @@
     <string name="urn">urn:schac:personalUniqueCode:int:esi:uvic.cat:10022072</string>
     <string name="code_bar_num">2110034356</string>
 
-    <!-- Setting Activity -->
-    <string name="title_activity_settings">Ajustes</string>
-    <string name="preferences">Ajustes</string>
 </resources>

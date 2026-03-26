@@ -7,11 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import cat.teknos.uvicapp.R
-import cat.teknos.uvicapp.fragment.EventsFragment
-import cat.teknos.uvicapp.fragment.BbvaFragment
 import cat.teknos.uvicapp.fragment.CardFragment
-import cat.teknos.uvicapp.fragment.LauncherFragment
-import cat.teknos.uvicapp.fragment.TimetableFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -28,11 +24,11 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             if (item.itemId == bottomNavigationView.selectedItemId) return@setOnItemSelectedListener false
             when(item.itemId) {
-                R.id.timetable -> replaceFragment(TimetableFragment())
-                R.id.events -> replaceFragment(EventsFragment())
+                R.id.timetable -> replaceFragment(CardFragment())
+                R.id.events -> replaceFragment(CardFragment())
                 R.id.card -> replaceFragment(CardFragment())
-                R.id.launcher -> replaceFragment(LauncherFragment())
-                R.id.bbva -> replaceFragment(BbvaFragment())
+                R.id.launcher -> replaceFragment(CardFragment())
+                R.id.bbva -> replaceFragment(CardFragment())
             }
             true
         }
@@ -42,20 +38,4 @@ class MainActivity : AppCompatActivity() {
             replace(R.id.fl_wrapper, fragment)
             commit()
         }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_overflow, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_preferences -> {
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }
